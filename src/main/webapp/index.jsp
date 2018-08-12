@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>Top 10 Coin Compare</h2>
 </body>
 </html>
