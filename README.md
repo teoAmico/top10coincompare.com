@@ -1,2 +1,0 @@
-# top10coincompare.com
-
