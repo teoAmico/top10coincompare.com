@@ -85,6 +85,9 @@
 					</tbody>
 			  </table>
 			</div>
+			<div>
+			<img width="100%" height="85px" src="${pageContext.request.contextPath}/resources/images/etoro-banner.png"/>
+			</div>
 			<div class="table-responsive">
 				<table class="table table-striped">
 					<thead>
@@ -110,7 +113,7 @@
 							<td>0</td>
 							<td>0</td>
 							<td>0</td>
-							<td>0</td>
+							<td>x0</td>
 							<td>0</td>
 							<td>0</td>
 							<td>0</td>
@@ -118,6 +121,9 @@
 						</c:forEach>
 					</tbody>
 				</table>
+				<div class="text-right">
+					<a href="#main-container" >Back Top</a>
+				</div>
 			</div>
 		</div>
 		<!-- Footer -->
@@ -133,9 +139,10 @@
 	</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
+    <script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.slim.min.js" ></script>
+    <script src="${pageContext.request.contextPath}/resources/js/popper.min.js" ></script>
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js" ></script>
+    <script src="${pageContext.request.contextPath}/resources/js/typeahead.bundle.min.js" ></script>
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
   </body>
 </html>
