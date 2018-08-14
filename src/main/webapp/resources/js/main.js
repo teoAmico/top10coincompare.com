@@ -1,53 +1,41 @@
-jQuery(document).ready(function($) {
-
-		$("#search-coin").submit(function(event) {
-
-			// Disble the search button
-			enableSearchButton(false);
-
-			// Prevent the form from submitting via the browser.
-			event.preventDefault();
-
-			searchViaAjax();
-
-		});
-
-});
-
-function searchViaAjax() {
-
-	var search = {}
-	search["coin"] = $("#coin").val();
-
-	$.ajax({
-		type : "POST",
-		contentType : "application/json",
-		url : "${home}search/api/getListing",
-		data : JSON.stringify(search),
-		dataType : 'json',
-		timeout : 100000,
-		success : function(data) {
-			console.log("SUCCESS: ", data);
-			display(data);
-		},
-		error : function(e) {
-			console.log("ERROR: ", e);
-			display(e);
-		},
-		done : function(e) {
-			console.log("DONE");
-			enableSearchButton(true);
-		}
+$( document ).ready(function() {
+	$.typeahead({
+	    input: '.js-typeahead-coin',
+	    display: ['label','symbol'],
+	    minLength: 1,
+	    maxItem: 10,
+	    order: 'asc',
+	    offset:true,
+	    templateValue: "{{label}}",
+	    template: '<span data-coin="{{label|raw}}">{{label}}</span>',
+	    emptyTemplate: function (query) {
+	        if (query.length > 0) {
+	            return 'No results found';
+	        }
+	    },
+	    source: {
+	    	coin: {	
+	    		ajax: {
+	                url: "resources/data/coin-listing.json",
+	            }
+	    	}
+	    },
+	    callback: {
+	        onInit: function (node) {
+	            console.log('Typeahead Initiated on ' + node.selector);
+	        },
+	        onClickAfter: function (node, a, item, event){
+	        	 //console.log(node, a, item, event);
+	        	 console.log(item)
+	        	 $('#coin-ref[name="ref"]').val(item.value);
+	        },
+	        onSubmit: function(){
+	        	//check if ref has been set
+	        },
+	        onCancel: function (node, event){
+	        	 $('#coin-ref[name="ref"]').val("");
+	        }
+	    }
+	    
 	});
-
-}
-
-function enableSearchButton(flag) {
-	$("#btn-search").prop("disabled", flag);
-}
-
-function display(data) {
-	var json = "<h4>Ajax Response</h4><pre>"
-			+ JSON.stringify(data, null, 4) + "</pre>";
-	$('#feedback').html(json);
-}
+});

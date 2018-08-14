@@ -13,28 +13,37 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" >
  	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css" >
+ 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/jquery.typeahead.min.css" >
     <title>Top 10 Coin Compare</title>
   </head>
   <body>
 	<div class="container" id="main-container">
 		<div class="row justify-content-center" id="main-title-container">
-			<h1>Top 10 Coin Compare</h1>
+			<h1><a href="${pageContext.request.contextPath}" style="text-decoration:none;color: black;">Top 10 Coin Compare</a></a></h1>
 		</div>
 		<div class="row justify-content-center" id="search-container">
-		 	<form class="justify-content-center">
+		 	<form action="coin-compare" class="justify-content-center" method="GET">
 		 		<div class="form-row">
-			 	  	<div class="col-6">
-			 			<input  class="form-control"  type="text" placeholder="Coin"/>
-			 		</div>
-			 		<div class="col">
-			 			<input  class="form-control"  type="number" placeholder="Holdings" />
+			 	  	<div class="col-5">
+				 	  	<div class="typeahead__container">
+					        <div class="typeahead__field">
+					            <div class="typeahead__query">
+					                <input class="form-control js-typeahead-coin" name="coin" type="search" placeholder="Coin" autocomplete="off">
+					            </div>
+					        </div>
+					    </div>
+				    </div>
+			 		<div class="col-4">
+			 			<input  class="form-control"  type="number" placeholder="Holdings (Qty)" name="holding" />
 			 		</div>
 			 		<div class="col">
 			 			<input  class="btn btn-primary"  type="submit" value="Compare"/>
 			 		</div>
 		 		</div>
+		 		<input type="hidden" name="ref" value="" id="coin-ref"/>
 		 	</form>
 		</div>
+		<c:if test="${show_result}">
 		<div>
 			<small>Results:</small>
 			<div class="table-responsive">
@@ -70,7 +79,7 @@
 						</tr>
 						<tr>
 							<th>Holdings (Qty):</th>
-							<td>&nbsp;0</td>
+							<td>${holdings}</td>
 						</tr>
 						<tr>
 							<th>Holdings (USD):</th>
@@ -121,11 +130,13 @@
 						</c:forEach>
 					</tbody>
 				</table>
-				<div class="text-right">
-					<a href="#main-container" >Back Top</a>
-				</div>
+				
 			</div>
 		</div>
+		<div class="text-right">
+			<a href="javascript:window.scrollTo(0,0);" >Back Top</a>
+		</div>
+		</c:if>
 		<!-- Footer -->
 		<div id="footer">
 			<div class="row justify-content-center">
@@ -139,10 +150,10 @@
 	</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.slim.min.js" ></script>
+    <script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js" ></script>
     <script src="${pageContext.request.contextPath}/resources/js/popper.min.js" ></script>
     <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js" ></script>
-    <script src="${pageContext.request.contextPath}/resources/js/typeahead.bundle.min.js" ></script>
+    <script src="${pageContext.request.contextPath}/resources/js/jquery.typeahead.min.js" ></script>
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
   </body>
 </html>
