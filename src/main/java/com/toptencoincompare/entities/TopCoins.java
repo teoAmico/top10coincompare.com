@@ -21,10 +21,10 @@ public class TopCoins {
 	private int id;
 	
 	@Column(name = "cmc_id")
-	private int cmcId;
+	private Integer cmcId;
 	
-	@Column(name = "posiiton")
-	private int posiiton;
+	@Column(name = "position")
+	private Integer position;
 	
 	@Column(name = "name")
 	private String name;
@@ -38,7 +38,7 @@ public class TopCoins {
 	@Column(name = "market_cap")
 	private Double marketCap;
 	
-	@Column(name = "usd_volum_24h")
+	@Column(name = "usd_volume_24h")
 	private Double usdVolume24h;
 	
 	@Column(name = "last_updated", columnDefinition="DATETIME")
@@ -53,16 +53,16 @@ public class TopCoins {
 		return cmcId;
 	}
 
-	public void setCmcId(int cmcId) {
+	public void setCmcId(Integer cmcId) {
 		this.cmcId = cmcId;
 	}
 
-	public int getPosiiton() {
-		return posiiton;
+	public Integer getPosition() {
+		return position;
 	}
 
-	public void setPosiiton(int posiiton) {
-		this.posiiton = posiiton;
+	public void setPosition(Integer position) {
+		this.position = position;
 	}
 
 	public String getName() {
@@ -127,7 +127,7 @@ public class TopCoins {
 
 	@Override
 	public String toString() {
-		return "TopCoins [id=" + id + ", cmcId=" + cmcId + ", posiiton=" + posiiton + ", name=" + name + ", symbol="
+		return "TopCoins [id=" + id + ", cmcId=" + cmcId + ", position=" + position + ", name=" + name + ", symbol="
 				+ symbol + ", usdPrice=" + usdPrice + ", marketCap=" + marketCap + ", usdVolume24h=" + usdVolume24h
 				+ ", lastUpdated=" + lastUpdated + ", createdAt=" + createdAt + "]";
 	}

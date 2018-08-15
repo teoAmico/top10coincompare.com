@@ -34,7 +34,7 @@
 					    </div>
 				    </div>
 			 		<div class="col-4">
-			 			<input  class="form-control"  type="number" placeholder="Holdings (Qty)" name="holding" />
+			 			<input  class="form-control"  type="number" placeholder="Holdings (Qty)" name="holding" step="any"/>
 			 		</div>
 			 		<div class="col">
 			 			<input  class="btn btn-primary"  type="submit" value="Compare"/>
@@ -114,19 +114,19 @@
 						</tr>
 					</thead>
 					<tbody>
-					<c:forEach begin="1" end="10" varStatus="loop">
-						<tr>
-							<td>${loop.index}</td>
-							<td>Bitcoin</td>
-							<td>0</td>
-							<td>0</td>
-							<td>0</td>
-							<td>0</td>
-							<td>x0</td>
-							<td>0</td>
-							<td>0</td>
-							<td>0</td>
-						</tr>
+						<c:forEach var="top_coin" items="${top_coins}">
+							<tr>
+								<td>${top_coin[0]}</td>
+								<td>${top_coin[1]}</td>
+								<td>${top_coin[2]}</td>
+								<td>${top_coin[3]}</td>
+								<td>${top_coin[4]}</td>
+								<td>${top_coin[5]}</td>
+								<td>${top_coin[6]}</td>
+								<td>${top_coin[7]}</td>
+								<td>${top_coin[8]}</td>
+								<td>${top_coin[9]}</td>
+							</tr>
 						</c:forEach>
 					</tbody>
 				</table>

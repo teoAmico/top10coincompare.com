@@ -35,8 +35,8 @@ public class CoinsListingDAOImpl implements CoinsListingDAO {
 	public CoinsListing getCoin(Integer id) {
 		Session session = sessionFactory.getCurrentSession();
 		
-		Query<CoinsListing> coinQuery = session.createQuery("from CoinsListing WHERE id=?", CoinsListing.class);
-		coinQuery.setParameter(0, Integer.valueOf(id));
+		Query<CoinsListing> coinQuery = session.createQuery("from CoinsListing WHERE id=:id", CoinsListing.class);
+		coinQuery.setParameter( "id", Integer.valueOf(id));
 		CoinsListing coin = coinQuery.getSingleResult();
 		
 		return coin;
@@ -58,8 +58,8 @@ public class CoinsListingDAOImpl implements CoinsListingDAO {
 		coin.setUsdPrice(usdPrice);
 		coin.setMarketCap(marketCap);
 		LocalDateTime localDateTime = LocalDateTime.now();
-		Timestamp timestamp = Timestamp.valueOf(localDateTime);
-		coin.setLastUpdated(timestamp);
+		Timestamp today = Timestamp.valueOf(localDateTime);
+		coin.setLastUpdated(today);
 		coin.setSymbol(symbol);
 		coin.setUsdVolume24h(usdVolume24h);
 		session.update(coin);

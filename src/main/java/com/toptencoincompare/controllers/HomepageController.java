@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -21,11 +22,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.toptencoincompare.api.CoinListingApi;
 import com.toptencoincompare.api.GlobalMarketCapApi;
+import com.toptencoincompare.api.TopCoinsApi;
 import com.toptencoincompare.dao.CoinsListingDAO;
 import com.toptencoincompare.dao.GlobalMarketCapDAO;
 import com.toptencoincompare.dao.TopCoinsDAO;
 import com.toptencoincompare.entities.CoinsListing;
 import com.toptencoincompare.entities.GlobalMarketCap;
+import com.toptencoincompare.entities.TopCoins;
 
 @Controller
 public class HomepageController {
@@ -92,11 +95,55 @@ public class HomepageController {
 				coin = coinsListingDAO.getCoin(coinId.get());
 				
 			}
+			
+			//Top 10
+			List<TopCoins> topCoins = topCoinsDAO.getTopCoins();
+			long topCoinDateMin = TimeUnit.MILLISECONDS.toMinutes(topCoins.get(0).getLastUpdated().getTime());
+			if((todayDateMin - topCoinDateMin) >= 10) {
+				
+				TopCoinsApi tc = new TopCoinsApi();
+				List<List> tcList = tc.getTop10Coins();
+				
+				System.out.println(tcList);
+				for(int i = 0;i<tcList.size(); i++) {
+					System.out.println(Integer.parseInt(tcList.get(i).get(0).toString()));
+					topCoinsDAO.updateTopCoin(Integer.parseInt(tcList.get(i).get(0).toString()), 
+							Integer.parseInt(tcList.get(i).get(1).toString()), 
+							tcList.get(i).get(2).toString(), 
+							tcList.get(i).get(3).toString(), 
+					        Double.parseDouble(tcList.get(i).get(4).toString()), 
+							Double.parseDouble(tcList.get(i).get(5).toString()),
+							Double.parseDouble(tcList.get(i).get(6).toString()));
+				}
+				
+				topCoins = topCoinsDAO.getTopCoins();
+			}
+			
 			Double usdPrice = coin.getUsdPrice() != null ? coin.getUsdPrice() : 0.0 ;
 			Double usdHolding = (holdingQty *  usdPrice);
 			Double coinMarketCap = coin.getMarketCap() != null ? coin.getMarketCap() :0.0 ;
 			Double share = (100 * coinMarketCap) / globalMarketCap.getMarketCap();
 			
+			//loop topCoins and defined columns values
+			List<List> topCoinsList = new ArrayList<List>();
+			for(int i =0 ; i < topCoins.size(); i++) {
+				List<String> list = new ArrayList<String>();
+				
+				//add list to array view for TopCoins obj
+				list.add(topCoins.get(i).getPosition().toString());
+				list.add(topCoins.get(i).getName() + " (" +topCoins.get(0).getSymbol()+")");
+				list.add(topCoins.get(i).getMarketCap().toString());
+				list.add(topCoins.get(i).getUsdPrice().toString());
+				list.add(topCoins.get(i).getUsdVolume24h().toString());
+				list.add("");
+				list.add("");
+				list.add("");
+				list.add("");
+				list.add("");
+				topCoinsList.add(list);
+			}
+
+			System.out.println(topCoinsList);
 			//UI Variables
 			model.addObject("global_market_cap", globalMarketCap.getMarketCap());
 			model.addObject("coin_name", coin.getName());
@@ -109,7 +156,8 @@ public class HomepageController {
 			model.addObject("coin_logo", coin.getLogoLink());
 			model.addObject("coin_last_update",coin.getLastUpdated());
 			model.addObject("coin_usd_holdings", usdHolding);
-			model.addObject("coin_market_share", share);
+			model.addObject("coin_market_share", share);			
+			model.addObject("top_coins", topCoinsList);
 			result = true;
 		}
 		model.addObject("holdings", holdingQty);
