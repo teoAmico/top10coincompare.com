@@ -48,4 +48,89 @@ public class TopCoins {
 	@Column(name = "created_at", columnDefinition="DATETIME")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdAt;
+
+	public int getCmcId() {
+		return cmcId;
+	}
+
+	public void setCmcId(int cmcId) {
+		this.cmcId = cmcId;
+	}
+
+	public int getPosiiton() {
+		return posiiton;
+	}
+
+	public void setPosiiton(int posiiton) {
+		this.posiiton = posiiton;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSymbol() {
+		return symbol;
+	}
+
+	public void setSymbol(String symbol) {
+		this.symbol = symbol;
+	}
+
+	public Double getUsdPrice() {
+		return usdPrice;
+	}
+
+	public void setUsdPrice(Double usdPrice) {
+		this.usdPrice = usdPrice;
+	}
+
+	public Double getMarketCap() {
+		return marketCap;
+	}
+
+	public void setMarketCap(Double marketCap) {
+		this.marketCap = marketCap;
+	}
+
+	public Double getUsdVolume24h() {
+		return usdVolume24h;
+	}
+
+	public void setUsdVolume24h(Double usdVolume24h) {
+		this.usdVolume24h = usdVolume24h;
+	}
+
+	public Date getLastUpdated() {
+		return lastUpdated;
+	}
+
+	public void setLastUpdated(Date lastUpdated) {
+		this.lastUpdated = lastUpdated;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	@Override
+	public String toString() {
+		return "TopCoins [id=" + id + ", cmcId=" + cmcId + ", posiiton=" + posiiton + ", name=" + name + ", symbol="
+				+ symbol + ", usdPrice=" + usdPrice + ", marketCap=" + marketCap + ", usdVolume24h=" + usdVolume24h
+				+ ", lastUpdated=" + lastUpdated + ", createdAt=" + createdAt + "]";
+	}
+	
+	
 }

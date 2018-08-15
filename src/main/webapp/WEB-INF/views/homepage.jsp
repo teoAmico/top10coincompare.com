@@ -51,31 +51,31 @@
 			  		<tbody>
 						<tr>
 							<th>Global Market Cap (USD):</th>
-							<td>&nbsp;0</td>
+							<td><fmt:formatNumber value="${global_market_cap}" type="currency" currencySymbol=""/></td>
 						</tr>
 						<tr>
 							<th>Coin:</th>
-							<td>&nbsp;NULL</td>
+							<td><c:out value="${coin_name}"/> (<c:out value="${coin_symbol}"/>)</td>
 						</tr>
 						<tr>
 							<th>Total Supply:</th>
-							<td>&nbsp;0</td>
+							<td><fmt:formatNumber type="number" value="${coin_total_supply}"/></td>
 						</tr>
 						<tr>
 							<th>Circulating Supply:</th>
-							<td>&nbsp;0</td>
+							<td><fmt:formatNumber type="number" value="${coin_circulating_supply}"/></td>
 						</tr>
 						<tr>
 							<th>Price (USD):</th>
-							<td>&nbsp;0</td>
+							<td><fmt:formatNumber value="${coin_usd_price}" type="currency" currencySymbol=""/></td>
 						</tr>
 						<tr>
 							<th>Coin Market Cap (USD):</th>
-							<td>&nbsp;0</td>
+							<td><fmt:formatNumber value="${coin_market_cap}" type="currency" currencySymbol=""/></td>
 						</tr>
 						<tr>
 							<th>Volume 24h (USD):</th>
-							<td>&nbsp;0</td>
+							<td><fmt:formatNumber value="${coin_usd_volume_24h}" type="currency" currencySymbol=""/></td>
 						</tr>
 						<tr>
 							<th>Holdings (Qty):</th>
@@ -83,13 +83,13 @@
 						</tr>
 						<tr>
 							<th>Holdings (USD):</th>
-							<td>&nbsp;0</td></tr>
+							<td><fmt:formatNumber value="${coin_usd_holdings}" type="currency" currencySymbol=""/></td></tr>
 						<tr>
 							<th>Market Share %:</th>
-							<td>&nbsp;0</td></tr>
+							<td><fmt:formatNumber type="number" maxFractionDigits="2" value="${coin_market_share}"/></td></tr>
 						<tr>
 							<th>Last Updated:</th>
-							<td>&nbsp;00-00-000</td>
+							<td><c:out value="${coin_last_update}"/></td>
 						</tr>
 					</tbody>
 			  </table>
@@ -106,10 +106,10 @@
 							<th>Top Coin Market Cap (USD)</th>
 							<th>Top Coin Price (USD)</th>
 							<th>Top Coin Volume 24h</th>
-							<th>Compare Price (USD)</th>
+							<th>Compare <c:out value="${coin_symbol}"/> Price (USD)</th>
 							<th>X Return</th>
-							<th>Compare Volume 24h %</th>			
-							<th>Compare Holdings (USD)</th>
+							<th>Compare <c:out value="${coin_symbol}"/> Volume 24h %</th>			
+							<th>Compare <c:out value="${coin_symbol}"/> Holdings (USD)</th>
 							<th>Market Share %</th>
 						</tr>
 					</thead>

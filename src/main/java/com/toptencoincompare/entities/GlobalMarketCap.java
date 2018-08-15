@@ -30,4 +30,44 @@ public class GlobalMarketCap {
 	@Column(name = "created_at", columnDefinition="DATETIME")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdAt;
+
+	public Double getMarketCap() {
+		return marketCap;
+	}
+
+	public void setMarketCap(Double marketCap) {
+		this.marketCap = marketCap;
+	}
+
+	public Date getLastUpdated() {
+		return lastUpdated;
+	}
+
+	public void setLastUpdated(Date lastUpdated) {
+		this.lastUpdated = lastUpdated;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	@Override
+	public String toString() {
+		return "GlobalMarketCap [id=" + id + ", marketCap=" + marketCap + ", lastUpdated=" + lastUpdated
+				+ ", createdAt=" + createdAt + "]";
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
 }
