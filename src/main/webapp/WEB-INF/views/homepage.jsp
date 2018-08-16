@@ -18,9 +18,9 @@
   </head>
   <body>
 	<div class="container" id="main-container">
-		<div class="row justify-content-center" id="main-title-container">
-			<h1><a href="${pageContext.request.contextPath}" style="text-decoration:none;color: black;">Top 10 Coin Compare</a></a></h1>
-		</div>
+		<!--  Header -->
+		<jsp:include page="header.jsp"></jsp:include>
+		<!-- Search -->
 		<div class="row justify-content-center" id="search-container">
 		 	<form action="coin-compare" class="justify-content-center" method="GET">
 		 		<div class="form-row">
@@ -43,6 +43,7 @@
 		 		<input type="hidden" name="ref" value="" id="coin-ref"/>
 		 	</form>
 		</div>
+		<!--  Results -->
 		<c:if test="${show_result}">
 		<div>
 			<small>Results:</small>
@@ -96,8 +97,8 @@
 					</tbody>
 			  </table>
 			</div>
-			<div>
-			<img width="100%" height="85px" src="${pageContext.request.contextPath}/resources/images/etoro-banner.png"/>
+			<div style="min-height: 85px;background-color: #C0C0C0;padding:10px;">
+				<small>Ads Space</small>
 			</div>
 			<div class="table-responsive">
 				<table class="table table-striped">
@@ -140,15 +141,7 @@
 		</div>
 		</c:if>
 		<!-- Footer -->
-		<div id="footer">
-			<div class="row justify-content-center">
-				<a href="${pageContext.request.contextPath}/about" >About</a>&nbsp;|&nbsp;<a href="${pageContext.request.contextPath}/terms" >Terms</a>&nbsp;|&nbsp;<a href="${pageContext.request.contextPath}/contact-us">Contact Us</a>
-			</div>
-			<div class="row justify-content-center">
-				&copy; <fmt:formatDate value="${date}" pattern="yyyy" /> Top10CoinCompare.com
-			</div>
-		      
-	    </div>
+		<jsp:include page="footer.jsp"></jsp:include>
 	</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

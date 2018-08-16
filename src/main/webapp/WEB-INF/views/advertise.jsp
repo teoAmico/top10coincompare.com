@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" >
  	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css" >
  	
-<title>Top 10 Coin Compare - Contact Us</title>
+<title>Top 10 Coin Compare - Advertise</title>
 </head>
 <body>
 <div class="container" id="main-container">
 		<!--  Header -->
 		<jsp:include page="header.jsp"></jsp:include>
 		<div>
-		<h3>Contact Us</h3>
+		<h3>Advertise</h3>
 		<div>
 			<p></p>
 		</div>
