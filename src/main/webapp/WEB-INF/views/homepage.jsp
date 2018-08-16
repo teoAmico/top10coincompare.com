@@ -89,7 +89,9 @@
 							<td><fmt:formatNumber type="number" maxFractionDigits="2" value="${coin_market_share}"/></td></tr>
 						<tr>
 							<th>Last Updated:</th>
-							<td><c:out value="${coin_last_update}"/></td>
+							<td>
+								<fmt:formatDate value="${coin_last_update}" pattern="dd MMM  yyyy hh:mm:ss" />
+							</td>
 						</tr>
 					</tbody>
 			  </table>
@@ -105,11 +107,11 @@
 							<th>Top Coin</th>
 							<th>Top Coin Market Cap (USD)</th>
 							<th>Top Coin Price (USD)</th>
-							<th>Top Coin Volume 24h</th>
+							<th>Top Coin Volume 24h (USD)</th>
 							<th>Compare <c:out value="${coin_symbol}"/> Price (USD)</th>
 							<th>X Return</th>
 							<th>Compare <c:out value="${coin_symbol}"/> Volume 24h %</th>			
-							<th>Compare <c:out value="${coin_symbol}"/> Holdings (USD)</th>
+							<th><c:out value="${coin_symbol}"/> Holdings (USD)</th>
 							<th>Market Share %</th>
 						</tr>
 					</thead>
@@ -118,14 +120,14 @@
 							<tr>
 								<td>${top_coin[0]}</td>
 								<td>${top_coin[1]}</td>
-								<td>${top_coin[2]}</td>
-								<td>${top_coin[3]}</td>
-								<td>${top_coin[4]}</td>
-								<td>${top_coin[5]}</td>
-								<td>${top_coin[6]}</td>
-								<td>${top_coin[7]}</td>
-								<td>${top_coin[8]}</td>
-								<td>${top_coin[9]}</td>
+								<td><fmt:formatNumber value="${top_coin[2]}" type="currency" currencySymbol=""/></td>
+								<td><fmt:formatNumber value="${top_coin[3]}" type="currency" currencySymbol=""/></td>
+								<td><fmt:formatNumber value="${top_coin[4]}" type="currency" currencySymbol="" maxFractionDigits="0"/></td>
+								<td><fmt:formatNumber value="${top_coin[5]}" type="currency" currencySymbol=""/></td>
+								<td>x<fmt:formatNumber type="number" maxFractionDigits="0" value="${top_coin[6]}"/></td>
+								<td><fmt:formatNumber type="number" maxFractionDigits="2" value="${top_coin[7]}"/></td>
+								<td><fmt:formatNumber value="${top_coin[8]}" type="currency" currencySymbol=""/></td>
+								<td><fmt:formatNumber type="number" maxFractionDigits="2" value="${top_coin[9]}" /></td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -140,7 +142,7 @@
 		<!-- Footer -->
 		<div id="footer">
 			<div class="row justify-content-center">
-				<a href="#" >About</a>&nbsp;|&nbsp;<a href="#" >Terms</a>&nbsp;|&nbsp;<a href="#">Contact Us</a>
+				<a href="${pageContext.request.contextPath}/about" >About</a>&nbsp;|&nbsp;<a href="${pageContext.request.contextPath}/terms" >Terms</a>&nbsp;|&nbsp;<a href="${pageContext.request.contextPath}/contact-us">Contact Us</a>
 			</div>
 			<div class="row justify-content-center">
 				&copy; <fmt:formatDate value="${date}" pattern="yyyy" /> Top10CoinCompare.com

@@ -56,6 +56,7 @@ public class HomepageController {
 		ModelAndView model = new ModelAndView("homepage");
 		Boolean result = false;
 		Double holdingQty = 0.0;
+		DecimalFormat df = new DecimalFormat("#.00");
 		if(holding.isPresent()) {
 			holdingQty =  holding.get();
 		}
@@ -74,7 +75,7 @@ public class HomepageController {
 			if((todayDateMin - gmcDateMin) >= 10) {
 				GlobalMarketCapApi gmc = new GlobalMarketCapApi();
 				Double cmcGlobalMarketCap = gmc.getGlobalMarketCap();
-				DecimalFormat df = new DecimalFormat("#.00");
+				
 				Double marketCap = Double.parseDouble(df.format(cmcGlobalMarketCap));
 				globalMarketCapDAO.updateGlobalMarketCap(marketCap);
 				globalMarketCap = globalMarketCapDAO.getGlobalMarketCap();
@@ -135,11 +136,16 @@ public class HomepageController {
 				list.add(topCoins.get(i).getMarketCap().toString());
 				list.add(topCoins.get(i).getUsdPrice().toString());
 				list.add(topCoins.get(i).getUsdVolume24h().toString());
-				list.add("");
-				list.add("");
-				list.add("");
-				list.add("");
-				list.add("");
+				Double usdCoinComparePrice = topCoins.get(i).getMarketCap() / coin.getCirculatingSupply();
+				list.add(usdCoinComparePrice.toString());
+				Double xReturn = usdCoinComparePrice/usdPrice; 
+				list.add(xReturn.toString());
+				Double percentageVolume20h = ((100*coin.getUsdVolume24h())/topCoins.get(i).getUsdVolume24h());				
+				list.add(percentageVolume20h.toString());
+				Double coinHoldings = Double.parseDouble(df.format(usdCoinComparePrice)) * holdingQty;
+				list.add(coinHoldings.toString());
+				Double marketShare = (100*topCoins.get(i).getMarketCap())/globalMarketCap.getMarketCap();
+				list.add(marketShare.toString());
 				topCoinsList.add(list);
 			}
 
