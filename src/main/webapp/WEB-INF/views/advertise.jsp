@@ -17,7 +17,8 @@
 		<div>
 		<h3>Advertise</h3>
 		<div>
-			<p></p>
+			<h5>Would you like to advertise on Top10CoinCompare.com?</h5>
+			<p>Please send us a request via email with as much details as possible to <a href="mailto:advertise@top10coincompare.com">advertise@top10coincompare.com</a>.</p>
 		</div>
 		<a href="${pageContext.request.contextPath}">Back</a>
 		</div>

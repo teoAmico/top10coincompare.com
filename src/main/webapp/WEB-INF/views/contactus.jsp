@@ -17,7 +17,11 @@
 		<div>
 		<h3>Contact Us</h3>
 		<div>
-			<p></p>
+		<h5>Need help with Top 10 Coin Compare?</h5>
+			<p>
+			  Here's how to get in touch with us! Check out our FAQ page for answers to frequently asked questions. 
+			  If you can’t find an answer there then reach out to us on twitter or via email <a href="mailto:support@top10coincompare.com">support@top10coincompare.com</a> 
+			</p>
 		</div>
 		<a href="${pageContext.request.contextPath}">Back</a>
 		</div>
