@@ -95,7 +95,7 @@
 			  </table>
 			</div>
 			<div style="min-height: 85px;background-color: #DCDCDC;padding:10px;">
-				<p>Best Bitcoin Exchanges:</p>
+				<label><b>Best Bitcoin Exchanges:</b></label>
 				<h5><a href="https://www.coinbase.com/join/5a398762eeb6a901b9d7870e" target="blank"">Coinbase.com</a></h5>
 				<h5><a href="https://www.binance.com/?ref=15322857" target="blank"">Binance.com</a></h5>
 				<h5><a href="https://www.kucoin.com/#/?r=7K8JeH" target="blank"">Kucoin.com</a></h5>

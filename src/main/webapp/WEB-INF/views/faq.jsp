@@ -26,7 +26,7 @@
 			<h5>How "Compare <i>your selected coin</i> Volume 24h %" is calculated?</h5>
 			<p><i>Your selected coin</i> 24h volume times 100 divided by Top coin 24h volume.</p>
 			<h5>How "Your selected coin Holdings" is calculated?</h5>
-			<p>Holding quantity times <i>your coin</i> compare price</p>
+			<p>Your holding quantity times <i>your coin</i> compare price</p>
 			<h5>How "Market Share" is calculated?</h5>
 			<p>Top coin market cap times 100 divided by Global Market Cap.</p>
 			<h5>In what time zone is the site based?</h5>
@@ -34,7 +34,7 @@
 			<h5>Who is the data provider?</h5>
 			<p>Top 10 Coin compare webiste is using coinmarketcap.com free public data api.</p>
 			<h5>When data are updated?</h5>
-			<p>Data on this webiste are updated about every 10 minutes upon a coin search.</p>
+			<p>Data on this webiste are updated about every 10 minutes based on coin search.</p>
 			<h5>Am I allowed to use content of this website for any commercial or financial purposes?</h5>
 			<p>No, this website it's for educational purpose only, any information available on this site is not allow to be used for any commercial or financial purposes.</p>
 		</div>
