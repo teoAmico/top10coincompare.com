@@ -132,7 +132,7 @@ public class HomepageController {
 				
 				//add list to array view for TopCoins obj
 				list.add(topCoins.get(i).getPosition().toString());
-				list.add(topCoins.get(i).getName() + " (" +topCoins.get(0).getSymbol()+")");
+				list.add(topCoins.get(i).getName() + " (" +topCoins.get(i).getSymbol()+")");
 				list.add(topCoins.get(i).getMarketCap().toString());
 				list.add(topCoins.get(i).getUsdPrice().toString());
 				list.add(topCoins.get(i).getUsdVolume24h().toString());
