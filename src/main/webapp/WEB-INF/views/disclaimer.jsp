@@ -3,12 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
- <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" >
- 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css" >
- 	
-<title>Top 10 Coin Compare - Disclaimer</title>
+	<jsp:include page="metadata.jsp"></jsp:include>
+	<jsp:include page="analytics.jsp"></jsp:include>
+	<jsp:include page="common-res-header.jsp"></jsp:include>	
+	<title>Top 10 Coin Compare - Disclaimer</title>
 </head>
 <body>
 <div class="container" id="main-container">

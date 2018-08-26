@@ -6,14 +6,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" >
- 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css" >
- 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/jquery.typeahead.min.css" >
+    <jsp:include page="metadata.jsp"></jsp:include>
+    <jsp:include page="analytics.jsp"></jsp:include>
+    <jsp:include page="common-res-header.jsp"></jsp:include>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/jquery.typeahead.min.css" >
     <title>Top 10 Coin Compare</title>
   </head>
   <body>
@@ -33,8 +29,9 @@
 					        </div>
 					    </div>
 				    </div>
-			 		<div class="col-4">
-			 			<input  class="form-control"  type="number" placeholder="Holdings (Qty)" name="holding" step="any"/>
+			 		<div class="col-4" style="line-height:1">
+			 			<input  class="form-control"  type="number" placeholder="Holdings (Qty)" name="holding" step="any" />
+			 			<small  style="font-size:10px;">(Optional)</small>
 			 		</div>
 			 		<div class="col">
 			 			<input  class="btn btn-primary"  type="submit" value="Compare"/>
@@ -97,8 +94,14 @@
 					</tbody>
 			  </table>
 			</div>
-			<div style="min-height: 85px;background-color: #C0C0C0;padding:10px;">
-				<small>Ads Space</small>
+			<div style="min-height: 85px;background-color: #DCDCDC;padding:10px;">
+				<p>Best Bitcoin Exchanges:</p>
+				<h5><a href="https://www.coinbase.com/join/5a398762eeb6a901b9d7870e" target="blank"">Coinbase.com</a></h5>
+				<h5><a href="https://www.binance.com/?ref=15322857" target="blank"">Binance.com</a></h5>
+				<h5><a href="https://www.kucoin.com/#/?r=7K8JeH" target="blank"">Kucoin.com</a></h5>
+				<div class="text-right">
+					<small style="font-size:10px"><i>Sponsored links</i></small>
+				</div>
 			</div>
 			<div class="table-responsive">
 				<table class="table table-striped">

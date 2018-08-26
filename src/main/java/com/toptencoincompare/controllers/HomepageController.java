@@ -149,7 +149,6 @@ public class HomepageController {
 				topCoinsList.add(list);
 			}
 
-			System.out.println(topCoinsList);
 			//UI Variables
 			model.addObject("global_market_cap", globalMarketCap.getMarketCap());
 			model.addObject("coin_name", coin.getName());
