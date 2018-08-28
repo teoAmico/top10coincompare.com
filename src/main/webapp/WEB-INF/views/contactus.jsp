@@ -21,7 +21,7 @@
 			  If you can’t find an answer there then reach out to us on twitter or via email <a href="mailto:support@top10coincompare.com">support@top10coincompare.com</a> 
 			</p>
 		</div>
-		<a href="${pageContext.request.contextPath}">Back</a>
+		<a href="${pageContext.request.contextPath}/">Back</a>
 		</div>
 		<!-- Footer -->
 		<jsp:include page="footer.jsp"></jsp:include>

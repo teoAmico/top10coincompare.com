@@ -36,10 +36,10 @@ public class CoinsListing {
 	private String websiteSlug;
 	
 	@Column(name = "total_supply")
-	private Integer totalSupply;
+	private Long totalSupply;
 	
 	@Column(name = "circulating_supply")
-	private Integer circulatingSupply;
+	private Long circulatingSupply;
 	
 	@Column(name = "usd_price")
 	private Double usdPrice;
@@ -97,19 +97,19 @@ public class CoinsListing {
 		this.websiteSlug = websiteSlug;
 	}
 
-	public Integer getTotalSupply() {
+	public Long getTotalSupply() {
 		return totalSupply;
 	}
 
-	public void setTotalSupply(Integer totalSupply) {
+	public void setTotalSupply(Long totalSupply) {
 		this.totalSupply = totalSupply;
 	}
 
-	public Integer getCirculatingSupply() {
+	public Long getCirculatingSupply() {
 		return circulatingSupply;
 	}
 
-	public void setCirculatingSupply(Integer circulatingSupply) {
+	public void setCirculatingSupply(Long circulatingSupply) {
 		this.circulatingSupply = circulatingSupply;
 	}
 

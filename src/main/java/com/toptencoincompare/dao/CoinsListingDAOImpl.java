@@ -45,7 +45,7 @@ public class CoinsListingDAOImpl implements CoinsListingDAO {
 
 	@Override
 	@Transactional
-	public boolean updateCoin(Integer id,String name, Integer circulatingSupply, Integer totalSupply, Double usdPrice,
+	public boolean updateCoin(Integer id,String name, Long circulatingSupply, Long totalSupply, Double usdPrice,
 			Double marketCap, String lastUpdated, String symbol, Double usdVolume24h) {
 		
 		Session session = sessionFactory.getCurrentSession();

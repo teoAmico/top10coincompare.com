@@ -23,7 +23,7 @@
 			
 		</div>
 		<h4>Thank you for your contributions to this project!.</h4>
-		<a href="${pageContext.request.contextPath}">Back</a>
+		<a href="${pageContext.request.contextPath}/">Back</a>
 		</div>
 		<!-- Footer -->
 		<jsp:include page="footer.jsp"></jsp:include>

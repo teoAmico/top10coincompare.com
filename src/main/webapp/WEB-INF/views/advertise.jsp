@@ -18,7 +18,7 @@
 			<h5>Would you like to advertise on Top10CoinCompare.com?</h5>
 			<p>Please send us a request via email with as much details as possible to <a href="mailto:advertise@top10coincompare.com">advertise@top10coincompare.com</a>.</p>
 		</div>
-		<a href="${pageContext.request.contextPath}">Back</a>
+		<a href="${pageContext.request.contextPath}/">Back</a>
 		</div>
 		<!-- Footer -->
 		<jsp:include page="footer.jsp"></jsp:include>

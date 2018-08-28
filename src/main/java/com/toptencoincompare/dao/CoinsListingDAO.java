@@ -10,7 +10,7 @@ public interface CoinsListingDAO {
 
 	public CoinsListing getCoin(Integer id);
 	
-	public boolean updateCoin(Integer id, String name, Integer circulatingSupply, 
-			Integer totalSupply, Double usdPrice, Double marketCap, 
+	public boolean updateCoin(Integer id, String name, Long circulatingSupply, 
+			Long totalSupply, Double usdPrice, Double marketCap, 
 			String lastUpdated, String symbol, Double usdVolume24h);
 }

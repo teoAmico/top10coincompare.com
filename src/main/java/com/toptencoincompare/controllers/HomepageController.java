@@ -88,8 +88,8 @@ public class HomepageController {
 				//api call update coin data
 				CoinListingApi cl = new CoinListingApi();
 				List coinListing = cl.getCoin(coin.getCmcId());
-				coinsListingDAO.updateCoin(coinId.get(),coinListing.get(0).toString(), Integer.parseInt(coinListing.get(1).toString()), 
-						Integer.parseInt(coinListing.get(2).toString()),  Double.parseDouble(coinListing.get(3).toString()), 
+				coinsListingDAO.updateCoin(coinId.get(),coinListing.get(0).toString(), Long.parseLong(coinListing.get(1).toString()), 
+						Long.parseLong(coinListing.get(2).toString()),  Double.parseDouble(coinListing.get(3).toString()), 
 						 Double.parseDouble(coinListing.get(4).toString()), coinListing.get(5).toString(), coinListing.get(6).
 						 toString(),  Double.parseDouble(coinListing.get(7).toString()));
 

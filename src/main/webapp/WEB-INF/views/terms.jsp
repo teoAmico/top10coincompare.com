@@ -91,7 +91,7 @@
 		</small>
 		<br/><br/>
 		</div>
-		<a href="${pageContext.request.contextPath}">Back</a>
+		<a href="${pageContext.request.contextPath}/">Back</a>
 		</div>
 		<!-- Footer -->
 		<jsp:include page="footer.jsp"></jsp:include>
